@@ -1,0 +1,33 @@
+
+<h1>Tweets</h1>
+
+  <tbody>
+
+    <div class="row">
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h4 class="card-title"><%= current_user.name%></h4>
+            <p class="card-text"><%= current_user.email%></p>
+            <%= link_to "Ver Perfil", edit_user_registration_path, class:"btn btn-primary"%>
+          </div>
+        </div>  
+      </div>
+
+      <div class=col-8>
+        <center><%= link_to 'Novo Tweet', new_tweet_path, class:"btn btn-primary"%></center>
+        <% @tweets.each do |tweet| %>
+          <h4 class="card-title"><%= tweet.user.username%></h4>
+          <h6 class="card-subtitle mb-2 text-muted"><%= tweet.user.email %></h6>
+          <p class="card-text"><%= tweet.conteudo %></p>
+        <% end %>
+      </div>
+    </div>
+
+  </tbody>
+</table>
+
+<br>
+
+
+
